@@ -5,17 +5,11 @@
 ##Usage
 
 ```swift
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-     
-        // MARK: Start Monitoring For Network Reachability Changes.
-        SSASwiftReachability.sharedManager?.startMonitoring()
-        
-        return true
-    }
-    
-     override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
+        
+         // MARK: Start Monitoring For Network Reachability Changes.
+        SSASwiftReachability.sharedManager?.startMonitoring()
         
         // MARK: Listen For Network Reachability Changes
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityStatusChanged:", name: reachabilityDidChangeNotification, object: nil)
