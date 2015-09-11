@@ -32,7 +32,8 @@ support coming soon)
 ###Author
 
 Sebastian Andersen
-    Inspired by AFNetworkReachabilityManager
+
+Inspired by AFNetworkReachabilityManager
 
 ###License
 
