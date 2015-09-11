@@ -2,6 +2,8 @@
 
 [![](http://img.shields.io/badge/iOS-8.0%2B-blue.svg)]() [![](http://img.shields.io/badge/Swift-2.0-blue.svg)]() 
 
+Inspired by AFNetworkReachabilityManager
+
 ###Usage
 
 ```swift
