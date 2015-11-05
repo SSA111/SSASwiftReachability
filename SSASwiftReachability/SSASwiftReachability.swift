@@ -205,9 +205,7 @@ public class SSASwiftReachability {
             case .Advanced:
 #if os(iOS)
                 if isOnWWAN {
-                    #if (arch(i386) || arch(x86_64)) && os(iOS)
-                        status = .ReachableViaWWAN
-                    #endif
+                    status = .ReachableViaWWAN
                 } else {
                     status = .ReachableViaWiFi
                 }
