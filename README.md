@@ -15,11 +15,11 @@
     }
 
     func reachabilityStatusChanged(notification: NSNotification) {
-    if let info = notification.userInfo {
-        if let s = info[SSAReachabilityNotificationStatusItem] {
-            reachabilityStatusLabel.text = (s as AnyObject).description
+        if let info = notification.userInfo {
+            if let s = info[SSAReachabilityNotificationStatusItem] {
+                reachabilityStatusLabel.text = (s as AnyObject).description
+            }
         }
-    }
     }
 ```
 ###Installation
