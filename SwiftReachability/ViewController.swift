@@ -16,25 +16,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SSASwiftReachability.sharedManager?.startMonitoring()
+        
         // MARK: Listen For Network Reachability Changes
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityStatusChanged:", name: reachabilityDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityStatusChanged(notification:)), name: NSNotification.Name(rawValue: SSAReachabilityDidChangeNotification), object: nil)
     }
     
     func reachabilityStatusChanged(notification: NSNotification) {
         if let info = notification.userInfo {
-
-            if let s = info[reachabilityNotificationStatusItem] {
-                reachabilityStatusLabel.text = s.description
+            if let s = info[SSAReachabilityNotificationStatusItem] {
+                reachabilityStatusLabel.text = (s as AnyObject).description
             }
         }
     }
- 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
 
