@@ -6,7 +6,7 @@
 
 ```swift
     override func viewDidLoad() {
-    super.viewDidLoad()
+        super.viewDidLoad()
 
         SSASwiftReachability.sharedManager?.startMonitoring()
 
