@@ -17,14 +17,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // MARK: Listen For Network Reachability Changes
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityStatusChanged:", name: reachabilityDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: Selector(("reachabilityStatusChanged:")), name: NSNotification.Name(rawValue: SSAReachabilityDidChangeNotification), object: nil)
     }
     
     func reachabilityStatusChanged(notification: NSNotification) {
         if let info = notification.userInfo {
 
-            if let s = info[reachabilityNotificationStatusItem] {
-                reachabilityStatusLabel.text = s.description
+            if let s = info[SSAReachabilityNotificationStatusItem] {
+                reachabilityStatusLabel.text = (s as AnyObject).description
             }
         }
     }
